@@ -7,7 +7,8 @@ interface props{
 const Element:React.FC<props> = (props) => {
     return ( 
         <div>
-
+       <img src={props.img} alt="" />
+       <p> {props.title}</p>
         </div>
      );
 }
