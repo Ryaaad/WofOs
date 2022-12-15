@@ -7,11 +7,11 @@ const initialState = {
         title:'Calcultor',
         img:0},
         { children:[ ],
-        title:'Terminal',
+        title:'Clock',
           clicked:false,
         img:1},
         { children:[ ],
-        title:'Clock',
+        title:'Terminal',
           clicked:false,
         img:2},
         { children:[ ],
@@ -37,6 +37,7 @@ const mainSlice = createSlice({
             },
         Eclicked:(state,action:PayloadAction<number>)=>{
         state.Items[action.payload].clicked=!state.Items[action.payload].clicked;
+        state.Items[action.payload].children.push();
         },
       
     }

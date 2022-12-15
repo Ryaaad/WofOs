@@ -4,6 +4,7 @@ import Woff from './assets/Wolf.jpg'
 import Element from './CMD/Element'
 import {useDispatch,useSelector} from 'react-redux'
 import { Bodyclicked } from './feature/main/mainSlice'
+import Child from './CMD/Child'
 function App() {
   const Dispatch=useDispatch()
   const {Items} = useSelector((state:any)=>state.main)
@@ -25,8 +26,10 @@ function App() {
  )
    })}
   </div>
+  <Child body='' title='Clock' img={1}></Child> 
 </div>
 <Navbar></Navbar>
+
    </div>
   )
 }
