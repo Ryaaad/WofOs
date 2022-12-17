@@ -11,7 +11,7 @@ function App() {
   console.log(Items);
   
   return (
-   <div  className="font-['Fixedsys_Excelsior',monospace] "   >
+   <div  className="font-['Fixedsys_Excelsior',monospace] overflow-hidden "   >
     <img src={Woff} alt=""  className='fixed z-[1] w-[200px] h-[200px] opacity-1 top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%]
      rounded-full   '  />
 
