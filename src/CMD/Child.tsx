@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 
 interface props{
+    id:number,
     title:string,
-    body:string,
-    img?:number,
 }
 
 const Child:React.FC<props> = (props) => {
@@ -13,7 +12,9 @@ const Child:React.FC<props> = (props) => {
           <div  className="flex text-xl font-bold items-center justify-center relative text-white rounded-top-md " > 
           <h1> {props.title} </h1>
           <div className="bg-white w-[25px] h-[25px] cursor-pointer absolute flex items-center justify-center top-[50%] text-2xl 
-          translate-y-[-50%] right-[1%] text-black ">x</div>
+          translate-y-[-50%] right-[1%] text-black "   
+          onClick={()=>{}}
+          >x</div>
           </div>
      <div className="bg-white w-full h-[90%] "></div>
         </motion.div> 

@@ -35,11 +35,16 @@ const mainSlice = createSlice({
             },
         Eclicked:(state,action:PayloadAction<number>)=>{
         state.Items[action.payload].clicked=!state.Items[action.payload].clicked;
-        state.Items[action.payload].children.push({id: state.Items[action.payload].children.length , title:state.Items[action.payload].title });
         },
-      
+        Addchild:(state,action:PayloadAction<number>)=>{
+          state.Items[action.payload].children.push({id: state.Items[action.payload].children.length , title:state.Items[action.payload].title });
+          },
+        deletechild:(state,action:PayloadAction<number>)=>{
+          state.Items[action.payload].clicked=!state.Items[action.payload].clicked;
+          state.Items[action.payload].children.push({id: state.Items[action.payload].children.length , title:state.Items[action.payload].title });
+          },
     }
 });
 
-export const {Bodyclicked,Eclicked}= mainSlice.actions
+export const {Bodyclicked,Eclicked,Addchild,deletechild}= mainSlice.actions
 export default mainSlice.reducer;

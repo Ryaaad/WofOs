@@ -21,30 +21,22 @@ function App() {
     // onClick={()=>Dispatch(Bodyclicked())} 
     >
    {Items.map((E: { action: string; title: string; img: number;clicked:boolean; children:{id: number;title: string;}[]; })=>{
-     {E.children.map((child)=>{
+    
+ return (
+  <div>
+      <Element {...E} key={E.img} ></Element>
+     {E.children.map((child,index)=>{
      if(child.id != 0)  return (
-       <Child body='' title='Clock' img={1} ></Child>
+       <Child {...child} ></Child>
       )
         })}
- return (
-  <Element {...E} key={E.img} ></Element>
+  </div>
+
  
  );
 
    })}
-
-
-{Items.map((E: { action: string; title: string; img: number;clicked:boolean; children:{id: number;title: string;}[]; })=>{
-     {E.children.map((child)=>{
-     return (
-      <div  className='bg-black absolute top-0'> 
-<Child body='' title='Clock' img={1} ></Child>
-      </div>
-       
-      )
-        })} })}
   </div>
-  <Child body='' title='Clock' img={1}></Child> 
 </div>
 <Navbar></Navbar>
 
