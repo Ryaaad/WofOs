@@ -20,11 +20,29 @@ function App() {
   className="w-full fixed z-[20] h-[93vh] bg-repeat content-start flex flex-col flex-wrap p-4 gap-3 gap-x-[30px] "
     // onClick={()=>Dispatch(Bodyclicked())} 
     >
-   {Items.map((E: { action: string; title: string; img: number;clicked:boolean })=>{
+   {Items.map((E: { action: string; title: string; img: number;clicked:boolean; children:{id: number;title: string;}[]; })=>{
+     {E.children.map((child)=>{
+     if(child.id != 0)  return (
+       <Child body='' title='Clock' img={1} ></Child>
+      )
+        })}
  return (
   <Element {...E} key={E.img} ></Element>
- )
+ 
+ );
+
    })}
+
+
+{Items.map((E: { action: string; title: string; img: number;clicked:boolean; children:{id: number;title: string;}[]; })=>{
+     {E.children.map((child)=>{
+     return (
+      <div  className='bg-black absolute top-0'> 
+<Child body='' title='Clock' img={1} ></Child>
+      </div>
+       
+      )
+        })} })}
   </div>
   <Child body='' title='Clock' img={1}></Child> 
 </div>
