@@ -20,14 +20,14 @@ function App() {
   className="w-full fixed z-[20] h-[93vh] bg-repeat content-start flex flex-col flex-wrap p-4 gap-3 gap-x-[30px] "
     // onClick={()=>Dispatch(Bodyclicked())} 
     >
-   {Items.map((E: { action: string; title: string; img: number;clicked:boolean; children:{id: number;title: string;}[]; })=>{
+   {Items.map((E: { action: string; title: string; img: number;clicked:boolean; children:{id: number;title: string;state: boolean}[]; })=>{
     
  return (
   <div>
       <Element {...E} key={E.img} ></Element>
      {E.children.map((child,index)=>{
-     if(child.id != 0)  return (
-       <Child {...child} ></Child>
+     if(child.state != false)  return (
+       <Child  father_id={E.img} {...child} ></Child>
       )
         })}
   </div>

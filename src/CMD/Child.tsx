@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { deletechild } from "../feature/main/mainSlice";
 
 interface props{
+    father_id:number,
     id:number,
     title:string,
 }
 
 const Child:React.FC<props> = (props) => {
+    const distpatch=useDispatch();
     return ( 
         <motion.div drag  dragMomentum={false} className="bg-black font-['Fixedsys_Excelsior',monospace] p-2 pt-1 w-[450px] z-30 h-[300px] 
         absolute rounded-md ">
@@ -13,7 +17,7 @@ const Child:React.FC<props> = (props) => {
           <h1> {props.title} </h1>
           <div className="bg-white w-[25px] h-[25px] cursor-pointer absolute flex items-center justify-center top-[50%] text-2xl 
           translate-y-[-50%] right-[1%] text-black "   
-          onClick={()=>{}}
+          onClick={()=>{distpatch(deletechild([props.father_id,props.id]))}}
           >x</div>
           </div>
      <div className="bg-white w-full h-[90%] "></div>
