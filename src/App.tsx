@@ -8,7 +8,7 @@ import Child from './CMD/Child'
 function App() {
   const Dispatch=useDispatch()
   const {Items} = useSelector((state:any)=>state.main)
-  console.log(Items);
+
   
   return (
    <div  className="font-['Fixedsys_Excelsior',monospace] overflow-hidden "   >
